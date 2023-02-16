@@ -60,7 +60,8 @@ def collection(update,context):
         document=InputFile(file,f'{collection}.txt')
         bot.send_document(chat_id=update.message.chat_id,document=document)
     except Exception as e:
-        update.message.reply_text(e)
+        update.message.reply_text(bytes(str(e),'utf-8'))
+
         return USERNAME
 
 
